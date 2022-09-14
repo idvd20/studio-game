@@ -27,6 +27,9 @@ class Game
         end
 
         1.upto(rounds) do |rounds|
+            if block_given?
+                break if yield                            
+            end
             puts "\nRound #{rounds}:"
             @players.each do |player|
                 GameTurn.take_turn(player)
