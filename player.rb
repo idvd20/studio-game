@@ -15,6 +15,16 @@ class Player
         @yielded = []
     end
 
+    def self.from_csv(line)
+        name, health = line.split(',')
+        Player.new(name, Integer(health))
+    end
+
+    def high_score_entry
+        formatted_name = @name.ljust(20, ".")
+        "#{formatted_name}  #{score}"
+    end
+
     def strong?
         @health > 100
     end
