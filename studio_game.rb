@@ -3,12 +3,13 @@ require_relative 'player'
 require_relative 'clumsy_player'
 require_relative 'berserk_player'
 
-klutz = ClumsyPlayer.new('klutz', 105)
+# klutz = ClumsyPlayer.new('klutz', 105)
 berserker = BerserkPlayer.new('berserker', 50)
+clumsy = ClumsyPlayer.new('klutz', 105, 3)
 
 knuckleheads = Game.new("knuckleheads")
 
-knuckleheads.add_player(klutz)
+knuckleheads.add_player(clumsy)
 knuckleheads.add_player(berserker)
 
 knuckleheads.load_players(ARGV.shift || "players.csv")
