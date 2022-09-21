@@ -1,7 +1,10 @@
 require_relative 'treasure_trove'
+require_relative 'playable'
 
 class Player
-    attr_reader :health
+    include Playable
+
+    attr_accessor :health
     attr_accessor :name
 
     def name=(new_name)
@@ -23,20 +26,6 @@ class Player
     def high_score_entry
         formatted_name = @name.ljust(20, ".")
         "#{formatted_name}  #{score}"
-    end
-
-    def strong?
-        @health > 100
-    end
-
-    def blam
-        @health -= 10
-        puts "#{@name} got blammed!"
-    end
-
-    def w00t
-        @health += 15
-        puts "#{@name} got w00ted!"
     end
 
     def score

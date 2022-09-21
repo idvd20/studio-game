@@ -1,6 +1,7 @@
 require_relative 'game'
 require_relative 'die'
 require_relative 'treasure_trove'
+require_relative 'loaded_die'
 
 module GameTurn
     def self.take_turn(player)
